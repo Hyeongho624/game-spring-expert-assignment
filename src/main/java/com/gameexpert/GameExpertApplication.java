@@ -8,7 +8,6 @@ import org.springframework.boot.context.TypeExcludeFilter;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.FilterType;
 
-// commit practice
 @SpringBootApplication
 @ComponentScan(excludeFilters = @ComponentScan.Filter(type = FilterType.CUSTOM,
         classes = {EngineComponentFilter.class, TypeExcludeFilter.class,
