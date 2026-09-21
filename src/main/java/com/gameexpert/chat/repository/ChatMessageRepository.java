@@ -4,6 +4,7 @@ import com.gameexpert.chat.entity.ChatMessage;
 
 import java.util.List;
 
+import com.gameexpert.world.entity.World;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -17,4 +18,6 @@ public interface ChatMessageRepository extends JpaRepository<ChatMessage, Long>,
     @Modifying
     @Query("DELETE FROM ChatMessage m WHERE m.world.id = :worldId")
     void deleteByWorldId(@Param("worldId") Long worldId);
+
+    World world(World world);
 }
